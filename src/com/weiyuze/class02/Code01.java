@@ -1,4 +1,4 @@
-package com.weiyuze.class01.class02;
+package com.weiyuze.class02;
 
 public class Code01 {
 }

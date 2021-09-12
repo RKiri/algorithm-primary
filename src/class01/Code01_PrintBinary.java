@@ -11,9 +11,9 @@ public class Code01_PrintBinary {
 
 	public static void main(String[] args) {
 		// 32位
-//		int num = 4;
-//
-//		print(num);
+		int num = 4;
+
+		print(num);
 //		
 //		
 //		int test = 1123123;

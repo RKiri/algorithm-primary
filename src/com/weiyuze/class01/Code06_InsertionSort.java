@@ -22,7 +22,7 @@ public class Code06_InsertionSort {
     }
 
     //优化
-    private static void insertionSort2(int[] arr) {
+    public void insertionSort2(int[] arr) {
         if (arr == null || arr.length < 2) {
             return;
         }
@@ -42,7 +42,7 @@ public class Code06_InsertionSort {
 
     public static void main(String[] args) {
         int[] arr = {5, 7, 1, 3, 9, 2, 8, 4, 6};
-        insertionSort2(arr);
+        //insertionSort2(arr);
         printArray(arr);
     }
 

@@ -6,17 +6,20 @@ public class Code03_Comp {
     public static void main(String[] args) {
         int maxLen = 10;
         int maxValue = 1000;
-        int[] arr = lenRandomValueRandom(maxLen, maxValue);
-        int[] temp = copyArray(arr);
-        Code06_InsertionSort is = new Code06_InsertionSort();
-        //print(arr);
-        is.insertionSort2(arr);
-        //print(arr);
-        if (!isSort(arr)){
-            print(temp);//当出现问题时 可以拿拷贝的数组当例子 带入查看问题
-            System.out.println("插入排序有问题！");
+        int testTime = 10000;
+        for (int i = 0; i < testTime; i++) {
+            int[] arr = lenRandomValueRandom(maxLen, maxValue);
+            int[] temp = copyArray(arr);
+            Code06_InsertionSort is = new Code06_InsertionSort();
+            //print(arr);
+            is.insertionSort2(arr);
+            //print(arr);
+            if (!isSort(arr)) {
+                print(temp);//当出现问题时 可以拿拷贝的数组当例子 带入查看问题
+                System.out.println("插入排序有问题！");
+                break;//
+            }
         }
-
     }
 
     static int[] lenRandomValueRandom(int maxLen, int maxValue) {

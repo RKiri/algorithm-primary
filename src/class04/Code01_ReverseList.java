@@ -49,6 +49,7 @@ public class Code01_ReverseList {
 		return pre;
 	}
 
+	//将单链表反转
 	public static Node testReverseLinkedList(Node head) {
 		if (head == null) {
 			return null;
@@ -88,7 +89,7 @@ public class Code01_ReverseList {
 		return list.get(N - 1);
 	}
 
-	// for test
+	// for test 生成随机单链表
 	public static Node generateRandomLinkedList(int len, int value) {
 		int size = (int) (Math.random() * (len + 1));
 		if (size == 0) {
@@ -107,6 +108,7 @@ public class Code01_ReverseList {
 	}
 
 	// for test
+    //生成随机双链表
 	public static DoubleNode generateRandomDoubleList(int len, int value) {
 		int size = (int) (Math.random() * (len + 1));
 		if (size == 0) {
@@ -125,7 +127,8 @@ public class Code01_ReverseList {
 		return head;
 	}
 
-	// for test
+	// for test 获取链表原始顺序
+    //将链表里的值依次存到List里
 	public static List<Integer> getLinkedListOriginOrder(Node head) {
 		List<Integer> ans = new ArrayList<>();
 		while (head != null) {
@@ -136,6 +139,8 @@ public class Code01_ReverseList {
 	}
 
 	// for test
+    //将装着链表值的list传入 从后和已经反转的单链表依次循环比较
+    //将值从最后一个开始 向前循环和反向单链表比对检测next是否有问题
 	public static boolean checkLinkedListReverse(List<Integer> origin, Node head) {
 		for (int i = origin.size() - 1; i >= 0; i--) {
 			if (!origin.get(i).equals(head.value)) {
@@ -147,6 +152,7 @@ public class Code01_ReverseList {
 	}
 
 	// for test
+    //将链表里的值依次存到List里
 	public static List<Integer> getDoubleListOriginOrder(DoubleNode head) {
 		List<Integer> ans = new ArrayList<>();
 		while (head != null) {
@@ -157,6 +163,11 @@ public class Code01_ReverseList {
 	}
 
 	// for test
+    //装着链表值的list只有和正确反转双链表执行没有问题
+    //检查next要从head开始检查
+    //将值从最后一个开始 向前循环和反向单链表比对检测next是否有问题
+    //检查last需要从尾开始检查 反转链表需要从前向后检查
+    //上述检查next后更新一个end 从end开始一次检查last和装着链表值的list顺序比较
 	public static boolean checkDoubleListReverse(List<Integer> origin, DoubleNode head) {
 		DoubleNode end = null;
 		for (int i = origin.size() - 1; i >= 0; i--) {

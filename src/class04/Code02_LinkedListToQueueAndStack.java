@@ -27,14 +27,17 @@ public class Code02_LinkedListToQueueAndStack {
 			size = 0;
 		}
 
+		//判断是否有元素
 		public boolean isEmpty() {
 			return size == 0;
 		}
 
+		//返回有几个元素
 		public int size() {
 			return size;
 		}
 
+		//接受某个值以队列的形式
 		public void offer(V value) {
 			Node<V> cur = new Node<V>(value);
 			if (tail == null) {
@@ -47,7 +50,8 @@ public class Code02_LinkedListToQueueAndStack {
 			size++;
 		}
 
-		// C/C++的同学需要做节点析构的工作
+		// C/C++的同学需要做节点析构的工作】
+        //弹出
 		public V poll() {
 			V ans = null;
 			if (head != null) {
@@ -55,6 +59,7 @@ public class Code02_LinkedListToQueueAndStack {
 				head = head.next;
 				size--;
 			}
+			//防止脏数据
 			if (head == null) {
 				tail = null;
 			}
@@ -62,6 +67,7 @@ public class Code02_LinkedListToQueueAndStack {
 		}
 
 		// C/C++的同学需要做节点析构的工作
+		//要弹出的节点是什么但不真的弹出
 		public V peek() {
 			V ans = null;
 			if (head != null) {
@@ -118,7 +124,7 @@ public class Code02_LinkedListToQueueAndStack {
 
 	public static void testQueue() {
 		MyQueue<Integer> myQueue = new MyQueue<>();
-		Queue<Integer> test = new LinkedList<>();
+		Queue<Integer> test = new LinkedList<>();//
 		int testTime = 5000000;
 		int maxValue = 200000000;
 		System.out.println("测试开始！");
